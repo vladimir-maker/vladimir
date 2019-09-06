@@ -1,0 +1,79 @@
+@mixin grid($cols, $mgn){
+    float: left;
+    margin-right: $mgn;
+    margin-bottom: $mgn;
+    width:((100% - ($cols - 1) * $mgn) / $cols);
+    &:nth-child(#{$cols}n){
+        margin-right: 0; 
+    }
+}
+
+@mixin clearFix{
+    &:after{
+        content: "";
+        display: block;
+        clear: both;
+    }
+}
+
+@mixin border-radius($radius) {
+    border-radius: $radius;
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+}
+
+@mixin last-child() {
+    &:last-of-type {
+        @content
+    }
+}
+
+@mixin even(){
+    &:nth-child(even) {
+        @content
+    }
+}
+
+@mixin font-face($family, $file){
+    $fontpath: '../fonts' + '/' + $file;
+    @font-face{
+        font-family: '#{$family}';
+        src: url($fontpath + ".ttf") format('truetype')
+    }
+}
+
+@mixin keyframes($animationName) {
+    @-webkit-keyframes #{$animationName} {
+        @content;
+    }
+    @-moz-keyframes #{$animationName} {
+        @content;
+    }
+    @-o-keyframes #{$animationName} {
+        @content;
+    }
+    @keyframes #{$animationName} {
+        @content;
+    }
+}
+@mixin animate($name, $duration, $iteration, $direction) {
+    -webkit-animation-duration: $duration;
+    -moz-animation-duration: $duration;
+    -o-animation-duration: $duration;
+    animation-duration: $duration;
+    -webkit-animation-iteration-count: $iteration;
+    -moz-animation-iteration-count: $iteration;
+    -o-animation-iteration-count: $iteration;
+    animation-iteration-count: $iteration;
+    -webkit-animation-name: $name;
+    -moz-animation-name: $name;
+    -o-animation-name: $name;
+    animation-name: $name;
+    -webkit-animation-direction: $direction;
+    -moz-animation-direction: $direction;
+    -o-animation-direction: $direction;
+    animation-direction: $direction;
+}
+@mixin welcome {
+    @include animate(welcome, 1.7s, linear, easy-out);
+}

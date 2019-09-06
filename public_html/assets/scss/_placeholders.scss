@@ -1,0 +1,75 @@
+%icon {
+    width: 37px;
+    height: 37px;
+    padding: 6px;
+    background-color: $iconColorWeek;
+    vertical-align: text-bottom;
+}
+%head-welcome {
+    color: $colorCircle;
+    font-size: 32px;
+    padding: 23px 0 0 27px;
+    margin-bottom: 9px;
+    text-align: left;
+}
+
+%span-welcome {
+    color: $lettersGrayWeek;
+    font-size: 14px;
+    padding-left: 27px;
+    font-family: $appFontMedium;
+    letter-spacing: 1px;
+}
+
+%number-activity {
+    font-size: 32px;
+    font-family: $appFontBold;
+    margin-left: 50px;
+    margin-top: 26px;
+}
+
+%steps-span {
+    font-size: 32px;
+    font-family: $appFontBold;
+    float: right;
+    margin-right: 30px;
+    @media screen and (max-width: $break-small){
+        font-size:24px;
+    }
+
+}
+
+%head-day {
+    color: $colorWhite;
+    font-size: 32px;
+    padding-left: 10px;
+    margin-bottom: 9px;
+    text-align: left;
+}
+
+%span-day {
+    color: $colorWhite;
+    font-size: 14px;
+    padding-left: 10px;
+    font-family: $appFontMedium;
+    letter-spacing: 1px;
+}
+
+%circle-p {
+    color: $lettersBlack;
+    text-align: center;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    font-size: 17px;
+}
+
+%circle-span {
+    color: $lettersBlack;
+    text-align: center;
+    display: block;
+    font-family: $appFontBold;
+    font-size: 40px;
+    @media screen and (max-width: $break-small){
+        font-size:34px;
+    }
+}

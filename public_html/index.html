@@ -1,0 +1,160 @@
+<html>
+    <head>
+        <title>Fitness Tracker</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link type="text/css" rel="stylesheet" href="assets/css/style.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+              rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Advent+Pro:400,700&display=swap" 
+              rel="stylesheet">
+    </head>
+    <body>
+
+        <!--week-->
+
+        <div class="content" id="week">
+            <div class="header">
+                <h2>Welcome!</h2>
+                <span>Overview of your activity</span>
+            </div>
+            <div class="row-days">
+                <div class="day" onclick="getData('5 1, 2019')">
+                    <span>4</span>
+                    <span>MON</span>
+                </div>
+                <div class="day" onclick="getData('5 2, 2019')">
+                    <span>5</span>
+                    <span>TUE</span>
+                </div>
+                <div class="day" onclick="getData('5 3, 2019')">
+                    <span>6</span>
+                    <span>WED</span>
+                </div>
+                <div class="day" onclick="getData('5 4, 2019')">
+                    <span>7</span>
+                    <span>THY</span>
+                </div>
+                <div class="day" onclick="getData('5 5, 2019')">
+                    <span>8</span>
+                    <span>FRI</span>
+                </div>
+            </div>
+            <div class="activity">
+                <div class="material">
+                    <i class="material-icons">
+                        timer
+                    </i>
+                </div>
+                <div class="text">
+                    <span>Activity</span>
+                    <span>Average</span>
+                </div>
+                <div class="number">
+                    <span id="weeklyTotalTime">6h 40min</span><span> h</span>
+                </div>
+            </div>
+            <div class="steps">
+                <div class="material">
+                    <i class="material-icons">
+                        directions_run
+                    </i>
+                </div>
+                <div class="text">
+                    <span>Steps</span>
+                    <span>Total</span>
+                </div>
+                <div class="steps-number">
+                    <span id="weeklyTotalSteps">7,540</span>
+                </div>
+            </div>
+            <div class="steps">
+                <div class="material">
+                    <i class="material-icons">
+                        whatshot
+                    </i>
+                </div>
+                <div class="text">
+                    <span>Calories</span>
+                    <span>Total Burned</span>
+                </div>
+                <div class="steps-number">
+                    <span id="weeklyTotalCal">340</span>
+                </div>
+            </div>
+        </div>
+
+        <!--one day-->
+
+        <div class="content" id="day">
+            <div class="header-day">
+                <div class="material-day">
+                    <i id="back" class="material-icons">
+                        keyboard_arrow_left
+                    </i>
+                </div>
+                <div class="text-day">
+                    <h2 id="currentDay"></h2>
+                    <span>June 10, 2019.</span>
+                </div>
+            </div>
+            <div class="row-days">
+                <div class="day" onclick="getData('5 1, 2019')">
+                    <span>4</span>
+                    <span>MON</span>
+                </div>
+                <div class="day" onclick="getData('5 2, 2019')">
+                    <span>5</span>
+                    <span>TUE</span>
+                </div>
+                <div class="day" onclick="getData('5 3, 2019')">
+                    <span>6</span>
+                    <span>WED</span>
+                </div>
+                <div class="day" onclick="getData('5 4, 2019')">
+                    <span>7</span>
+                    <span>THY</span>
+                </div>
+                <div class="day" onclick="getData('5 5, 2019')">
+                    <span>8</span>
+                    <span>FRI</span>
+                </div>
+            </div>
+            <div class="day-data">
+                <div class="circle">
+                    <div class="icon-circle">
+                        <i class="material-icons">
+                            directions_run
+                        </i>
+                    </div>
+                    <div class="steps-data">
+                        <p>Steps</p>
+                        <span id="dailySteps">7,542</span>
+                    </div>
+                </div>
+                <div class="steps-data">
+                    <p>Very good</p>
+                    <span>Keep going!</span>
+                </div>
+                <div class="bottom-row">
+                    <div class="bottom-data">
+                        <span>km</span>
+                        <span id="dailyKm">4.2</span>
+                    </div>
+                    <div class="bottom-data">
+                        <span>cal</span>
+                        <span id="dailyCal">315</span>
+                    </div>
+                    <div class="bottom-data">
+                        <span>hours</span>
+                        <span id="dailyHours">4</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <script src="assets/js/jquery.js"></script>
+        <script src="assets/js/fitness.js"></script>
+        
+    </body>
+</html>

@@ -1,0 +1,152 @@
+@import '_variables.scss';
+@import '_mixins.scss.';
+@import '_placeholders.scss';
+@import '_day.scss';
+
+@include font-face('HelveticaNeue-Bold', 'HelveticaNeueBold' );
+@include font-face('HelveticaNeue-Medium', 'HelveticaNeueMedium' );
+
+* {
+    box-sizing: border-box;
+    margin: 0; 
+    padding: 0;
+}
+
+html {font-size: 16px}
+
+body {
+    font-family: $appFontMedium;
+    background-color: $colorWhite;
+    color: $colorWhite;
+}
+
+.content {background-image: linear-gradient(to bottom, $baseColorLight, $baseColorDark );
+          margin: 0 auto;
+          padding: 5px 30px 80px 30px;
+}
+
+@include keyframes(welcome) {
+    0% {
+        transform: translate(-300px)
+    }
+    50% {
+        transform: translate(70px)
+    }
+    100% {
+        transform: translate(0)
+    }
+}
+
+.header {
+    width: 340px;
+    height: 117px;
+    background-color: $colorWhite;
+    margin: 0 auto;
+    overflow: hidden;
+    @include border-radius(30px);
+    @media screen and (max-width: $break-small){
+        width: 100%;
+    }
+    h2{
+        @extend %head-welcome;
+        @include welcome;
+    }
+    span{
+        @extend %span-welcome;
+    }
+}
+
+.row-days {
+    width: 340px;
+    margin:20px auto;
+    @include clearFix;
+    @media screen and (max-width: $break-small){
+        width: 100%;
+    }
+    .day{&:hover{background-color: $lettersGray;
+                 transition: 0.3s;
+         }
+
+         @include grid(5, 3%);
+         @include border-radius(23px);
+         height: 57px;
+         text-align: center;
+         background-color: $colorButton;
+         padding-top: 8px;
+         cursor: pointer;
+
+         span{
+             font-size: 14px;
+             @include last-child(){
+                 display: block;
+             }
+         }
+    }
+} 
+
+.activity {
+    width: 340px;
+    height: 184px;
+    background-color: $colorButton; 
+    margin: 0 auto;
+    padding: 20px 0 30px 20px;
+    @include border-radius(23px);
+    @media screen and (max-width: $break-small){
+        width: 100%;
+    }
+    i{
+        @extend %icon;
+        @include border-radius(50%); 
+    }
+    .material{display: inline;}
+    .text{display: inline-block;
+          margin-left: 10px;
+          span{font-size: 17px;
+               @include last-child(){
+                   display:block;
+                   font-size: 14px;
+               }
+          }
+    }
+    .number{
+        @extend %number-activity
+    }
+} 
+
+.steps {
+    width: 340px;
+    height: 93px;
+    background-color: $colorButton; 
+    margin: 15px auto;
+    padding: 20px 0 30px 20px;
+    @include border-radius(23px);
+    @media screen and (max-width: $break-small){
+        width: 100%;
+    }
+    i{
+        @extend %icon;
+        @include border-radius(50%); 
+    }
+    .material{display: inline;}
+    .text{display: inline-block;
+          margin-left: 10px;
+          span{font-size: 17px;
+               @include last-child(){
+                   display:block;
+                   font-size: 14px;
+               }
+          }
+    }
+    .steps-number{
+        display: inline-block;
+        float:right;
+        span{
+            @extend %steps-span;
+        }
+    }
+}
+
+.active-button {
+    background-color: $colorWhite!important;
+    color: $colorCircle;
+}
